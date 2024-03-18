@@ -1,0 +1,4 @@
+**.exe
+.vscode/**
+**/config.yaml
+*.log
