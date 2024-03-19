@@ -1,6 +1,6 @@
 module github.com/dong9205/wechat_hook
 
-go 1.22.0
+go 1.21.0
 
 require (
 	github.com/eatmoreapple/openwechat v1.4.6
