@@ -30,4 +30,4 @@ jobs:
           goversion: "https://go.dev/dl/go1.22.1.linux-amd64.tar.gz"
           #project_path: "./cmd/wechat_hook"
           binary_name: "wechat_hook"
-          extra_files: LICENSE README.md
+          extra_files: README.md
