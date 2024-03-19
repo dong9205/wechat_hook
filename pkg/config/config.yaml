@@ -1,0 +1,6 @@
+api:
+  listen: "0.0.0.0:9200"
+  mode: "release"
+  push_msg: "/api/push_msg"
+  health_uri: "/ping"
+  metric_uri: "/metrics"

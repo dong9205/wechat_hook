@@ -1,4 +1,4 @@
 **.exe
 .vscode/**
-**/config.yaml
+/config.yaml
 *.log
