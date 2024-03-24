@@ -8,10 +8,10 @@ import (
 
 func TestConfigInit(t *testing.T) {
 	config := "./config.yaml"
-	err := ConfigInit(&config)
+	err := ConfigInit(config)
 	if err != nil {
 		config = "./config/config.yaml"
-		err := ConfigInit(&config)
+		err := ConfigInit(config)
 		if err != nil {
 			t.Fatal(err)
 		}

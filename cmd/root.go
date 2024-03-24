@@ -12,6 +12,10 @@ var rootCmd = &cobra.Command{
 	},
 }
 
+func init() {
+	rootCmd.PersistentFlags().StringP("config", "c", "./config.yaml", "配置文件路径")
+}
+
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {
 		panic(err)

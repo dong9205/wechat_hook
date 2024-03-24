@@ -14,7 +14,11 @@ var serverCmd = cobra.Command{
 	Long:  `启动服务`,
 	Run: func(cmd *cobra.Command, args []string) {
 		// config
-		config.ConfigInit(rootCmd.Flags().String("config", "./config.yaml", "配置文件路径"))
+		configFile, err := cmd.Flags().GetString("config")
+		if err != nil {
+			panic(err)
+		}
+		config.ConfigInit(configFile)
 		// 日志
 		logger.InitLogger()
 		// wechat bot
