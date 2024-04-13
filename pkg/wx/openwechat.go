@@ -117,7 +117,12 @@ func (botmgr *BotMgr) Send(msg, dest, destType string) error {
 		}
 		botmgr.mu.Lock()
 		defer botmgr.mu.Unlock()
-		friend.SendText(msg)
+		msgRes, err := friend.SendText(msg)
+		if err != nil {
+			botmgr.logger.Error().Err(err).Msg("发送消息失败")
+			return err
+		}
+		botmgr.logger.Info().Any("msgRes", msgRes).Msg("发送消息成功")
 	case "group":
 		group, err := botmgr.GetGroup(dest)
 		if err != nil {
@@ -126,7 +131,12 @@ func (botmgr *BotMgr) Send(msg, dest, destType string) error {
 		}
 		botmgr.mu.Lock()
 		defer botmgr.mu.Unlock()
-		group.SendText(msg)
+		msgRes, err := group.SendText(msg)
+		if err != nil {
+			botmgr.logger.Error().Err(err).Msg("发送消息失败")
+			return err
+		}
+		botmgr.logger.Info().Any("msgRes", msgRes).Msg("发送消息成功")
 	default:
 		return errors.New("dest type error")
 	}
