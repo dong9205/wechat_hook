@@ -10,5 +10,6 @@ FROM alpine:3.19
 WORKDIR /
 RUN set -eux && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories && apk update && apk add tzdata curl
 COPY --from=build /app/app /app
+ADD ./config.yaml /config.yaml
 EXPOSE 9200
 ENTRYPOINT ["/app"]

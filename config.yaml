@@ -1,0 +1,13 @@
+api:
+  listen: "0.0.0.0:9200"
+  mode: "release"
+  push_msg: "/api/push/msg"
+  health_uri: "/ping"
+  metric_uri: "/metrics"
+
+logger:
+  level: "info"
+  filename: "/mnt/data/wechat_hook/logs/wechat_hook.log"
+  max_size: 500
+  max_age: 7
+  max_backups: 30

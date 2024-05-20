@@ -2,6 +2,7 @@ package wx
 
 import (
 	"errors"
+	"fmt"
 	"sync"
 	"time"
 
@@ -9,6 +10,7 @@ import (
 	"github.com/eatmoreapple/openwechat"
 	"github.com/patrickmn/go-cache"
 	"github.com/rs/zerolog"
+	"github.com/skip2/go-qrcode"
 )
 
 type BotMgr struct {
@@ -29,6 +31,11 @@ func GetBotMgr() *BotMgr {
 	return botmgr
 }
 
+func ConsoleQrCode(uuid string) {
+	q, _ := qrcode.New("https://login.weixin.qq.com/l/"+uuid, qrcode.Low)
+	fmt.Println(q.ToString(true))
+}
+
 func newBotManager() *BotMgr {
 	logger := logger.GetLogger()
 	bot := openwechat.DefaultBot(openwechat.Desktop)
@@ -39,7 +46,7 @@ func newBotManager() *BotMgr {
 		}
 	}
 	// 注册登陆二维码回调
-	bot.UUIDCallback = openwechat.PrintlnQrcodeUrl
+	bot.UUIDCallback = ConsoleQrCode
 
 	// 登陆
 	if err := bot.Login(); err != nil {
