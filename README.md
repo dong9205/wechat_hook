@@ -38,3 +38,13 @@ curl --location --request POST 'http://localhost:9200/api/push/msg' --header 'Co
     "msg": "Hello Group!"
 }'
 ```
+
+<p align="center">
+<a href="https://star-history.com/#Significant-Gravitas/AutoGPT">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=dong9205/wechat_hook&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=dong9205/wechat_hook&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=dong9205/wechat_hook&type=Date" />
+  </picture>
+</a>
+</p>
